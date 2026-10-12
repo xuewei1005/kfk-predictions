@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFK 2060 预言档案</title>
+  <meta name="description" content="KFK 2060 预言档案：2019年豆瓣穿越者KFK 282条问答全收录、分类检索与现实印证事实核查。观察至2026.10。">
+  <!-- Prophecy Favicon (图5) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+
+  <!-- Mystic Cosmic Ambient Background -->
+  <div class="mystic-universe-bg">
+    <div class="celestial-portal-ring"></div>
+    <div class="nebula-glow nebula-1"></div>
+    <div class="nebula-glow nebula-2"></div>
+    <div class="starlight-mesh"></div>
+  </div>
+
+  <div class="app-layout">
+    
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-inner">
+        
+        <!-- Designed Brand Header -->
+        <div class="brand-design-container">
+          <div class="title-emblem-wrap">
+            <div class="chronos-emblem">
+              <svg viewBox="0 0 100 100" class="emblem-svg">
+                <circle cx="50" cy="50" r="45" class="emblem-outer-ring" />
+                <ellipse cx="50" cy="50" rx="38" ry="16" class="emblem-orbit-1" />
+                <ellipse cx="50" cy="50" rx="38" ry="16" class="emblem-orbit-2" />
+                <path d="M32 28 L68 28 L53 48 L68 72 L32 72 L47 48 Z" class="emblem-hourglass" />
+                <circle cx="50" cy="48" r="4" class="emblem-core" />
+              </svg>
+            </div>
+            <h1 class="brand-title">KFK 2060 预言档案</h1>
+          </div>
+        </div>
+
+        <!-- Header Action Controls -->
+        <div class="header-actions">
+          <!-- Author Link with '整理作者请联系' -->
+          <a href="https://x.com/caohaoyuan" target="_blank" rel="noopener noreferrer" class="btn btn-author" title="联系整理作者">
+            <svg class="x-logo" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            <span>整理作者请联系：@caohaoyuan</span>
+          </a>
+          <button id="btnRandom" class="btn btn-secondary" title="随机探索一条预言">🎲 随机看一条</button>
+          <button id="btnThemeToggle" class="btn btn-icon-only" title="切换深色/浅色模式">🌓</button>
+        </div>
+      </div>
+
+      <!-- 预言背景卡片 (原位置恢复) -->
+      <div class="prophecy-background-card">
+        <div class="bg-card-header">
+          <span class="bg-icon">🔮</span>
+          <span class="bg-title">预言背景</span>
+          <span class="bg-time">时空原点 · 2019.06.22 - 2019.12.31</span>
+        </div>
+        <p class="bg-content">
+          2019年6月22日，自称出生于2020年上海、来自2060年的网友 <strong>KFK</strong> 在豆瓣连载问答，留下 <strong>282条</strong> 涉及全球地缘、科技突变、气候极端化与精神归宿的时代预言，并在2019年底退网消失。「我是时间里的穷游者，从2060年来。今天是来到2019年的第一天。」
+        </p>
+      </div>
+    </header>
+
+    <!-- Sticky Filter Panel (需求10: 滑动时固定在顶部，需求3: 整体缩小) -->
+    <section class="controls-panel compact-panel sticky-filter-panel" id="stickyPanel">
+      <!-- Search & View Row -->
+      <div class="search-view-row">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="搜索问题、回答、预言小标题、事实考据..." autocomplete="off">
+          <button id="btnClearSearch" class="btn-clear" title="清空搜索" style="display: none;">✕</button>
+        </div>
+
+        <div class="view-switch-box">
+          <div class="btn-group view-switcher">
+            <button class="btn-view active" data-view="table" title="清单列表视图">☰ 清单列表</button>
+            <button class="btn-view" data-view="timeline" title="时间轴视图">⏱ 时间轴</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unified Filter 1: 实现状态 (单机选中，再次单击取消) -->
+      <div class="filter-row">
+        <div class="filter-label">实现状态</div>
+        <div class="filter-pills" id="statusFilterPills">
+          <button class="pill-btn active" data-status="all">全部 <span class="pill-count" id="pillAll">282</span></button>
+          <button class="pill-btn pill-fulfilled" data-status="已实现">已实现 <span class="pill-count" id="pillFulfilled">39</span></button>
+          <button class="pill-btn pill-partial" data-status="部分实现">部分实现 <span class="pill-count" id="pillPartial">36</span></button>
+          <button class="pill-btn pill-unfulfilled" data-status="未实现">未实现 <span class="pill-count" id="pillUnfulfilled">2</span></button>
+          <button class="pill-btn pill-pending" data-status="待验证">待验证 <span class="pill-count" id="pillPending">108</span></button>
+          <button class="pill-btn pill-unverifiable" data-status="无法验证">无法验证 <span class="pill-count" id="pillUnverifiable">97</span></button>
+        </div>
+      </div>
+
+      <!-- Unified Filter 2: 预言类型 (参考图5，增加图标，单机选中可取消) -->
+      <div class="filter-row">
+        <div class="filter-label">预言类型</div>
+        <div class="filter-pills" id="categoryFilterPills">
+          <button class="pill-btn active" data-category="all">全部</button>
+          <button class="pill-btn" data-category="科技与 AI"><span class="cat-icon">🤖</span> 科技与 AI</button>
+          <button class="pill-btn" data-category="城市与环境"><span class="cat-icon">🌐</span> 城市与环境</button>
+          <button class="pill-btn" data-category="战争与地缘"><span class="cat-icon">🧭</span> 战争与地缘</button>
+          <button class="pill-btn" data-category="经济与金融"><span class="cat-icon">📈</span> 经济与金融</button>
+          <button class="pill-btn" data-category="社会与人口"><span class="cat-icon">👥</span> 社会与人口</button>
+          <button class="pill-btn" data-category="医疗与健康"><span class="cat-icon">🤍</span> 医疗与健康</button>
+          <button class="pill-btn" data-category="教育与职业"><span class="cat-icon">📖</span> 教育与职业</button>
+          <button class="pill-btn" data-category="文化与娱乐"><span class="cat-icon">🎬</span> 文化与娱乐</button>
+          <button class="pill-btn" data-category="宗教与意识"><span class="cat-icon">✧</span> 宗教与意识</button>
+          <button class="pill-btn" data-category="个人与其他"><span class="cat-icon">💬</span> 个人与其他</button>
+        </div>
+      </div>
+
+      <!-- Unified Filter 3: 预言年代 (单机选中可取消) -->
+      <div class="filter-row">
+        <div class="filter-label">预言年代</div>
+        <div class="filter-pills" id="eraFilterPills">
+          <button class="pill-btn active" data-era="all">全部</button>
+          <button class="pill-btn" data-era="2019-2020">2019-2020年</button>
+          <button class="pill-btn" data-era="2021-2030">2021-2030年代</button>
+          <button class="pill-btn" data-era="2031-2048">2031-2048年代</button>
+          <button class="pill-btn" data-era="2049-2060">2049-2060年代</button>
+          <button class="pill-btn" data-era="远期/无明确年份">远期 / 未注明</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Status Bar -->
+    <div class="results-meta-bar">
+      <div class="meta-left">
+        共检索到 <span class="highlight-count" id="filteredCount">282</span> 条预言
+        <span class="observe-sub-tag">· 现实核查已观察至 2026.10</span>
+        <span id="activeFilterTags" class="active-filter-tags"></span>
+      </div>
+      <div class="meta-right">
+        <button id="btnResetFilters" class="btn-text-action" style="display: none;">清空筛选条件 ↺</button>
+      </div>
+    </div>
+
+    <!-- Main Content Area: Optimized Table View (缩小序号标签，添加小标题，状态在最右) -->
+    <main class="content-container">
+      
+      <!-- List / Table View -->
+      <div id="viewTable" class="prediction-table-wrapper">
+        <table class="prediction-table">
+          <thead>
+            <tr>
+              <th class="col-meta-th">序号与属性</th>
+              <th class="col-qa-th">预言小标题 · 提问与原文回答</th>
+              <th class="col-fact-th">核心提炼 · 现实考据与事实核查</th>
+              <th class="col-status-th">实现状态</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Populated by app.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Timeline View -->
+      <div id="viewTimeline" class="timeline-container" style="display: none;">
+        <!-- Populated by app.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <div class="empty-icon">🔭</div>
+        <h3>未找到符合条件的预言记录</h3>
+        <p>请尝试减少筛选条件或清空搜索关键词。</p>
+        <button id="btnEmptyReset" class="btn btn-primary">恢复默认全部展示</button>
+      </div>
+
+    </main>
+
+    <!-- Footer with Streamlined Mini Disclaimer -->
+    <footer class="app-footer">
+      <div class="disclaimer-mini-banner">
+        <span class="disclaimer-mini-tag">免责声明</span>
+        <span class="disclaimer-mini-text">本档案内容源于公开网络事件与客观事实核查，仅供文化思潮探讨与信息检索参考，不构成任何投资或决策建议。请保持理性与独立思辨。</span>
+      </div>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span><strong>KFK 2060 预言档案</strong> · 2019 豆瓣问答全量数据考证库（现实核查基准：2026.10）</span>
+        </div>
+        <div class="footer-right">
+          <span>整理作者请联系：<a href="https://x.com/caohaoyuan" target="_blank" rel="noopener noreferrer">@caohaoyuan</a></span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Detail Modal -->
+  <div id="detailModal" class="modal-backdrop" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-id" id="modalId">#001</span>
+          <span class="modal-cat" id="modalCat">科技与 AI</span>
+          <span class="modal-year" id="modalYear">2020年代</span>
+          <span class="modal-status" id="modalStatus">已实现</span>
+        </div>
+        <button id="btnCloseModal" class="modal-close" title="关闭窗口">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Prophecy Headline (小标题) -->
+        <div class="modal-title-headline" id="modalTitleHeadline"></div>
+
+        <div class="modal-section question-section">
+          <div class="section-label">👤 网友提问：</div>
+          <div class="section-content question-text" id="modalQuestion"></div>
+        </div>
+
+        <div class="modal-section answer-section">
+          <div class="section-label">⏳ KFK 回答：</div>
+          <div class="section-content answer-quote" id="modalAnswer"></div>
+        </div>
+
+        <div class="modal-section core-section">
+          <div class="section-label">💡 预言核心提炼：</div>
+          <div class="section-content core-text" id="modalCore"></div>
+        </div>
+
+        <div class="modal-section factcheck-section">
+          <div class="section-label">🔍 现实考据与事实核查（观察至2026.10）：</div>
+          <div class="section-content factcheck-text" id="modalFactCheck"></div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="btnModalPrev" class="btn btn-secondary">← 上一条</button>
+        <button id="btnModalCopy" class="btn btn-secondary">📋 复制内容</button>
+        <button id="btnModalNext" class="btn btn-secondary">下一条 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-bubble" style="display: none;"></div>
+
+  <!-- Scripts -->
+  <script src="predictions_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
