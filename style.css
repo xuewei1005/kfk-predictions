@@ -1371,26 +1371,376 @@ body.theme-light .disclaimer-mini-tag {
   flex: 1;
 }
 
-/* Responsive */
+/* =========================================================
+   Mobile Responsive System (手机端深度适配优化)
+   ========================================================= */
+
 @media (max-width: 860px) {
   .app-layout {
-    padding: 12px 10px 30px;
+    padding: 10px 12px 30px;
   }
-  .brand-title {
-    font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  /* 1. Header 移动端排版 */
+  .app-header {
+    margin-bottom: 10px;
   }
-  .filter-row {
+
+  .header-inner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 10px;
+    margin-bottom: 8px;
   }
+
+  .title-emblem-wrap {
+    gap: 8px;
+  }
+
+  .chronos-emblem {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-title {
+    font-size: 1.52rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .btn-author {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.76rem;
+    padding: 6px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    justify-content: center;
+  }
+
+  .header-actions .btn-secondary {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .btn-icon-only {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  /* 2. 预言背景卡片移动端精简 */
+  .prophecy-background-card {
+    padding: 10px 12px;
+    margin-top: 6px;
+  }
+
+  .bg-title {
+    font-size: 0.86rem;
+  }
+
+  .bg-time {
+    font-size: 0.7rem;
+  }
+
+  .bg-content {
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  /* 3. 吸顶筛选栏在手机端的极致紧凑与左右滑动手势 */
+  .sticky-filter-panel {
+    top: 0;
+    margin-left: -12px;
+    margin-right: -12px;
+    padding: 10px 12px 8px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 10px;
+  }
+
+  .search-view-row {
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .search-box {
+    min-width: 0;
+  }
+
+  .search-box input {
+    font-size: 16px; /* 防止 iOS Safari 点击自动放大页面 */
+    padding: 6px 28px 6px 32px;
+  }
+
+  .search-icon {
+    left: 10px;
+    font-size: 0.84rem;
+  }
+
+  .btn-view {
+    padding: 5px 8px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+
+  .filter-row {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
   .filter-label {
-    width: auto;
+    width: 56px;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
   }
+
+  /* 标签支持丝滑左右横划，不占手机垂直高度 */
+  .filter-pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 3px;
+    gap: 5px;
+  }
+
+  .filter-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pill-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 3px 9px;
+    font-size: 0.78rem;
+  }
+
+  /* 4. 表格转原生移动端卡片 (彻底消除横向滚动条，大字通透) */
+  .prediction-table-wrapper {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow-x: visible;
+  }
+
+  .prediction-table,
+  .prediction-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .prediction-table thead {
+    display: none; /* 手机端隐藏表头 */
+  }
+
+  .prediction-table tr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 12px;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 13px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+  }
+
+  body.theme-light .prediction-table tr {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  }
+
+  .prediction-table td {
+    display: block;
+    width: 100% !important;
+    padding: 0;
+    border-bottom: none;
+    box-sizing: border-box;
+  }
+
+  /* 序号与属性：顶部横向徽章排布 */
+  .col-meta-cell {
+    width: 100% !important;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  .meta-identity-card {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  /* 提问与回答 */
+  .col-qa-th {
+    margin-bottom: 10px;
+  }
+
+  .prophecy-headline-badge {
+    margin-bottom: 6px;
+    font-size: 0.82rem;
+    padding: 2px 7px;
+  }
+
+  .qa-question {
+    font-size: 1.02rem;
+    line-height: 1.45;
+  }
+
+  .qa-answer {
+    font-size: 0.92rem;
+    padding: 7px 10px;
+    margin-top: 4px;
+  }
+
+  /* 核心提炼与现实考据 */
+  .col-fact-th {
+    margin-bottom: 10px;
+  }
+
+  .fact-core,
+  .fact-check-content {
+    font-size: 0.88rem;
+    padding: 7px 10px;
+  }
+
+  /* 实现状态与操作栏：卡片底部整齐左右两端对齐 */
+  .col-status-cell {
+    width: 100% !important;
+    text-align: left;
+    padding-top: 9px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.06);
+  }
+
+  body.theme-light .col-status-cell {
+    border-top: 1px dashed rgba(0, 0, 0, 0.06);
+  }
+
+  .status-cell-wrap {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .badge-status {
+    padding: 3px 9px;
+    font-size: 0.78rem;
+  }
+
+  .btn-detail-sm {
+    padding: 4px 12px;
+    font-size: 0.82rem;
+  }
+
+  /* 5. 详情弹窗手机端适配 */
+  .modal-dialog {
+    max-width: 95vw;
+    width: 95vw;
+    max-height: 90vh;
+    border-radius: var(--radius-md);
+    margin: auto;
+  }
+
+  .modal-header {
+    padding: 12px 14px;
+  }
+
+  .modal-id {
+    font-size: 0.98rem;
+  }
+
+  .modal-body {
+    padding: 14px;
+  }
+
+  .modal-title-headline {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+
+  .question-text {
+    font-size: 1.02rem;
+  }
+
+  .answer-quote {
+    font-size: 0.92rem;
+    padding: 8px 11px;
+  }
+
+  .core-text,
+  .factcheck-text {
+    font-size: 0.88rem;
+    padding: 8px 11px;
+  }
+
+  .modal-actions {
+    padding: 10px 14px;
+    gap: 6px;
+  }
+
+  .modal-actions .btn {
+    flex: 1;
+    padding: 7px 4px;
+    font-size: 0.8rem;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  /* 6. 时间轴移动端适配 */
+  .timeline-container::before {
+    left: 14px;
+  }
+
+  .timeline-era-header {
+    margin-left: 0;
+    padding: 4px 10px;
+    font-size: 0.82rem;
+    top: 140px;
+  }
+
+  .timeline-item-card {
+    margin-left: 18px;
+    padding: 10px 12px;
+  }
+
+  /* 7. 页脚与免责声明移动端 */
   .disclaimer-mini-banner {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+    font-size: 0.75rem;
+    padding: 8px 10px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    align-items: center;
+    font-size: 0.76rem;
   }
 }
+
 
