@@ -1,15 +1,20 @@
-# KFK 2060 预言档案 (KFK 2060 Prediction Archive)
+# KFK 2060 预言档案 | KFK 2060 Prediction Archive
 
-2019 年豆瓣著名穿越事件全量 **282 条问答** 深度事实核查与现实印证数据库。
-现实核查时间基准：**2026.10**。
+> 一个面向中文互联网预言事件的可检索静态档案：收录 2019 年豆瓣“穿越问答”事件的 **282 条问答**，整理预言背景、主题分类、现实核查与相关事实线索。
+>
+> A searchable static archive of the 2019 Douban “time-traveler Q&A” event, covering **282 entries** with prediction context, topic categories, fact-checking, and real-world context.
+>
+> 🔗 在线阅读 / Live site: [kfk2060.netlify.app](https://t.co/bsEZvE43UR)
+>
+> 现实核查时间基准 / Fact-checking cutoff: **2026.10**
 
 ---
 
 ## 🌟 核心特性
 
-1. **纯静态零依赖架构**：无后端、免数据库，秒开秒加载，支持任意免费静态托管平台（GitHub Pages、Netlify、Vercel、Cloudflare 等）。
-2. **282 条全量问答与预言小标题**：每条预言均提炼凝练小标题（📌），涵盖网友提问、KFK 原文回答、预言核心提炼与现实考据事实核查。
-3. **10 大细分领域分类**：
+1. **预言背景与原始问答**：保留网友提问、KFK 原文回答与每条预言的核心提炼，帮助快速了解事件脉络。
+2. **282 条事实核查档案**：逐条整理现实印证、考据线索与当前判断，区分已实现、部分实现、待验证等状态。
+3. **10 大主题分类**：
    - 🤖 科技与 AI (29条)
    - 🧭 战争与地缘 (64条)
    - 📈 经济与金融 (18条)
@@ -20,42 +25,14 @@
    - 🤍 医疗与健康 (8条)
    - ✧ 宗教与意识 (22条)
    - 📖 教育与职业 (11条)
-4. **5 大实现状态**：已实现 (39)、部分实现 (36)、未实现 (2)、待验证 (108)、无法验证 (97)。
-5. **智能交互体验**：
+4. **5 大核查状态**：已实现 (39)、部分实现 (36)、未实现 (2)、待验证 (108)、无法验证 (97)。
+5. **可检索的交互浏览**：
    - 标签单机选中，再次单击可一键取消回“全部”；
    - 切换标签自动平滑回滚对齐至第一条预言；
    - 粘性吸顶筛选面板（`position: sticky`），长滚动浏览随手筛选；
    - 全局实时关键词搜索与高亮；
    - 星空深色 / 明亮日光双模式高对比度主题切换；
    - 快捷详情弹窗与一键复制卡片内容。
-
----
-
-## 🚀 免费公网部署教程 (任选其一，永久免费)
-
-本项目为标准的前端静态工程（HTML + CSS + JS），无需购买云服务器即可 100% 永久免费部署：
-
-### 方案 1：GitHub Pages（最推荐 · 官方稳定 · 支持自定义域名）
-1. 登录 [GitHub](https://github.com/) 并新建公开仓库（如命名为 `kfk-2060`）；
-2. 在项目根目录运行命令推送代码：
-   ```bash
-   git remote add origin https://github.com/<你的用户名>/kfk-2060.git
-   git push -u origin main
-   ```
-3. 在 GitHub 仓库页面点击 **Settings** -> **Pages**；
-4. 在 **Build and deployment** 下的 **Branch** 选择 `main` 分支根目录 `/ (root)`，点击 **Save**；
-5. 约 1 分钟后即可获得专属公网网址：`https://<你的用户名>.github.io/kfk-2060/`。
-
-### 方案 2：Netlify Drop（最省心 · 鼠标拖拽 3 秒上线 · 免敲命令）
-1. 访问 [Netlify Drop 官方页面](https://app.netlify.com/drop)（免费注册或直接 GitHub 授权登录）；
-2. 将项目目录中的 `kfk-2060-web.zip` 或整个文件夹拖拽至页面上传区；
-3. 上传完成后立即生成公网免费 HTTPS 网址（如 `https://kfk2060.netlify.app`），别人即可实时访问浏览！
-
-### 方案 3：Cloudflare Pages / Vercel（全球 CDN 极速分发 · 永久无限流量）
-- **Cloudflare Pages**：在 Cloudflare 控制台进入 `Workers & Pages` -> `Create application` -> `Pages` -> `Direct Upload`，上传文件包即可获得 `https://kfk-2060.pages.dev`。
-- **Vercel**：在 [Vercel](https://vercel.com/) 控制台点击 `Add New Project`，导入 GitHub 仓库即可实现自动化持续部署。
-
----
 
 ## 📁 核心文件清单
 
@@ -67,7 +44,6 @@
 | `predictions_data.js` | 282 条预言全量静态数据包（开箱即用免跨域问题） |
 | `predictions.json` | 完整格式化 JSON 考证数据集 |
 | `favicon.svg` | 时空传送门矢量标头图标 |
-| `kfk-2060-web.zip` | 一键拖拽部署专用压缩包 (132 KB) |
 
 ---
 
