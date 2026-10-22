@@ -1,52 +1,29 @@
 # KFK 2060 预言档案 | KFK 2060 Prediction Archive
 
-> 一个面向中文互联网预言事件的可检索静态档案：收录 2019 年豆瓣“穿越问答”事件的 **282 条问答**，整理预言背景、主题分类、现实核查与相关事实线索。
+> **中文**：一个面向中文互联网预言事件的简洁档案，收录 2019 年豆瓣“穿越问答”事件的 **282 条问答**，整理预言背景、主题分类与现实核查。
 >
-> A searchable static archive of the 2019 Douban “time-traveler Q&A” event, covering **282 entries** with prediction context, topic categories, fact-checking, and real-world context.
+> **English**: A concise archive of the 2019 Douban “time-traveler Q&A” event, covering **282 entries** with context, topic categories, and real-world fact-checking.
 >
 > 🔗 在线阅读 / Live site: [kfk2060.netlify.app](https://t.co/bsEZvE43UR)
 >
-> 现实核查时间基准 / Fact-checking cutoff: **2026.10**
+> 现实核查基准 / Fact-checking cutoff: **2026.10**
 
----
+## 项目内容 / Contents
 
-## 🌟 核心特性
+- **预言背景 / Background**：介绍 KFK 事件的起因、时间线和核心背景。
+- **282 条问答 / 282 entries**：整理网友提问、KFK 回答、预言提炼与现实线索。
+- **10 大主题 / 10 topics**：科技与 AI、战争与地缘、经济与金融、个人与其他、城市与环境、社会与人口、文化与娱乐、医疗与健康、宗教与意识、教育与职业。
+- **现实核查 / Fact-checking**：按已实现、部分实现、未实现、待验证和无法验证进行标注。
+- **便捷浏览 / Explore**：支持关键词搜索、主题筛选、状态筛选、列表视图与时间轴视图。
 
-1. **预言背景与原始问答**：保留网友提问、KFK 原文回答与每条预言的核心提炼，帮助快速了解事件脉络。
-2. **282 条事实核查档案**：逐条整理现实印证、考据线索与当前判断，区分已实现、部分实现、待验证等状态。
-3. **10 大主题分类**：
-   - 🤖 科技与 AI (29条)
-   - 🧭 战争与地缘 (64条)
-   - 📈 经济与金融 (18条)
-   - 💬 个人与其他 (86条)
-   - 🌐 城市与环境 (20条)
-   - 👥 社会与人口 (11条)
-   - 🎬 文化与娱乐 (13条)
-   - 🤍 医疗与健康 (8条)
-   - ✧ 宗教与意识 (22条)
-   - 📖 教育与职业 (11条)
-4. **5 大核查状态**：已实现 (39)、部分实现 (36)、未实现 (2)、待验证 (108)、无法验证 (97)。
-5. **可检索的交互浏览**：
-   - 标签单机选中，再次单击可一键取消回“全部”；
-   - 切换标签自动平滑回滚对齐至第一条预言；
-   - 粘性吸顶筛选面板（`position: sticky`），长滚动浏览随手筛选；
-   - 全局实时关键词搜索与高亮；
-   - 星空深色 / 明亮日光双模式高对比度主题切换；
-   - 快捷详情弹窗与一键复制卡片内容。
+## 核查状态 / Status
 
-## 📁 核心文件清单
+已实现 **39** · 部分实现 **36** · 未实现 **2** · 待验证 **108** · 无法验证 **97**
 
-| 文件 | 说明 |
-| :--- | :--- |
-| `index.html` | 网页主结构（含预言背景卡片、吸顶筛选面板、清单列表/时间轴视图、详情弹窗与免责声明） |
-| `style.css` | 现代神秘宇宙与日光双主题样式表，纯色块去框线扁平化设计 |
-| `app.js` | 响应式前端交互逻辑（单机/取消标签、滚动复位、全文搜索、弹窗、深浅切换） |
-| `predictions_data.js` | 282 条预言全量静态数据包（开箱即用免跨域问题） |
-| `predictions.json` | 完整格式化 JSON 考证数据集 |
-| `favicon.svg` | 时空传送门矢量标头图标 |
+Fulfilled **39** · Partially fulfilled **36** · Unfulfilled **2** · Pending **108** · Unverifiable **97**
 
----
+## 免责声明 / Disclaimer
 
-## ⚠️ 免责声明
+本档案记录公开网络事件及其现实核查，仅供文化研究、科技社会思潮探讨与信息检索参考，不构成投资、金融、医疗或个人决策依据。请保持理性与独立思辨。
 
-本档案所收录内容源自 2019 年互联网公开问答事件。所有事实考据、印证评注仅供文化研究、科技社会思潮探讨与信息检索参考，不构成任何投资、金融、医疗或个人决策依据。网络预言真伪请读者保持理性与独立思辨。
+This archive documents a public online event and related fact-checking for research and reference. It does not constitute investment, financial, medical, or personal advice.
